@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "server.tomcat.min-SpareThreads",
+      "type": "java.lang.String",
+      "description": "Description for server.tomcat.min-SpareThreads."
+  }
+] }
