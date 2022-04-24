@@ -1,5 +1,6 @@
 package com.chris.project.test.validation.annotation;
 
+import com.chris.project.test.entity.User;
 import com.chris.project.test.validation.validator.UserValidator;
 
 import javax.validation.Constraint;
@@ -16,4 +17,6 @@ public @interface UserValidate {
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
+
+    String[]  value() default {"12"};
 }

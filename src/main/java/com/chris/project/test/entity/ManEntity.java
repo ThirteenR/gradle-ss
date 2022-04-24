@@ -16,14 +16,9 @@ public class ManEntity{
     private String aex;
     @NotEmpty(message = "{0}你好呀")
     private String name;
-    @UserValidate(message = "user是是是")
+    @UserValidate(message = "{value},好的呢")
     private String job;
 
     @Valid
     private BaseEntity baseEntity;
-
-//    @Override
-//    public String toString() {
-//        return super.toString();
-//    }
 }

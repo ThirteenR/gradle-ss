@@ -19,7 +19,6 @@ public class BeanValidator {
                 .byProvider(HibernateValidator.class)
                 .configure()
                 .messageInterpolator(new I18nMessageInterpolator())
-                .failFast(true)
                 .buildValidatorFactory();
     }
     /**
@@ -47,6 +46,7 @@ public class BeanValidator {
         ManEntity manEntity = new ManEntity();
         manEntity.setBaseEntity(new BaseEntity());
         String validate = validate(manEntity);
+        String validate1 = validate(manEntity);
         System.out.println(validate);
     }
 }
