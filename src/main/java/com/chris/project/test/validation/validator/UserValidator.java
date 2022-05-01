@@ -24,18 +24,6 @@ public class UserValidator implements ConstraintValidator<UserValidate, String> 
     }
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
-        userValidate.value();
-        InvocationHandler invocationHandler = Proxy.getInvocationHandler(this.userValidate);
-        Field value = null;
-        try {
-            value = invocationHandler.getClass().getDeclaredField("memberValues");
-            value.setAccessible(true);
-            Map<String, Object> memberValues = (Map<String, Object>) value.get(invocationHandler);
-            String[] val = (String[]) memberValues.get("value");
-            memberValues.put("value", new String[]{"123", "nihaoyyy"});
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return StringUtils.equals(s, "123");
+       return true;
     }
 }

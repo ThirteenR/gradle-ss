@@ -1,9 +1,24 @@
 plugins {
+    id 'org.springframework.boot' version '2.6.5'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+
+// jar 包名称自定义
+bootJar {  //不需要带后缀（默认形式，会自带版本号：aaa-0.0.1-SNAPSHOT.jar ）
+    archiveFileName ='bb.jar'    //需要加后缀
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
 
 repositories {
     mavenLocal()
@@ -12,20 +27,20 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-test:2.6.5'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.projectlombok:lombok:1.18.16'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.5'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
     implementation 'com.alibaba:fastjson:1.2.80'
     implementation 'org.apache.rocketmq:rocketmq-spring-boot-starter:2.1.1'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.6.6'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     // https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
     // https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation 'mysql:mysql-connector-java:8.0.27'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
-    implementation 'org.springframework.boot:spring-boot-starter-aop:2.6.6'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
 
 
 }
